@@ -32,9 +32,16 @@ pipeline {
 				echo 'Test Passed !'
 			}
 			catch (err) {
+				
+				
+				git url: "ssh://jenkins@https://github.com/ahmetssaglam/flask-docker-tdd.git",
+				    credentialsId: 'FYRSIjc6eQy3xe2/0tocWGu/rFAyZm/kkOXXGRhOsxY',
+				    branch: dev
+				
+				
 				sh 'git checkout dev'
-				// sh 'git reset --hard dev@{1.minutes.ago}'
-				sh 'git reset --hard HEAD~1'
+				sh 'git reset --hard dev@{1.minutes.ago}'
+				// sh 'git reset --hard HEAD~1'
 				sh 'git push -f origin dev'
 				echo 'Test Failed ! Changes Reverted !'
 			}
