@@ -36,7 +36,7 @@ pipeline {
 				
 				git url: "ssh://jenkins@https://github.com/ahmetssaglam/flask-docker-tdd.git",
 				    credentialsId: 'FYRSIjc6eQy3xe2/0tocWGu/rFAyZm/kkOXXGRhOsxY',
-				    branch: dev
+				    branch: 'dev'
 				
 				
 				sh 'git checkout dev'
