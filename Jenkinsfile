@@ -34,9 +34,9 @@ pipeline {
 			catch (err) {
 				
 				echo 'commmmit'
-				git url: "git@github.com:ahmetssaglam/flask-docker-tdd.git",
-				    credentialsId: 'bdefd814-cf0d-4e6d-8a6a-08b00bd71ab1',
-				    branch: 'dev'
+				//git url: "git@github.com:ahmetssaglam/flask-docker-tdd.git",
+				   // credentialsId: 'bdefd814-cf0d-4e6d-8a6a-08b00bd71ab1',
+				  //  branch: 'dev'
 				
 				
 				sh 'git checkout dev'
