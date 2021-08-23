@@ -25,8 +25,20 @@ pipeline {
 	stage('test') {
 	    steps {
 		echo 'Waiting for DB !!'
-		sh 'sleep 30'
-		sh 'docker exec tdd-web python3 -m pytest tests'
+		sh 'sleep 30'	
+		script {
+			try {
+				sh 'docker exec tdd-web python3 -m pytest tests'
+				echo 'Test Passed !'
+			}
+			catch (err) {
+				sh 'git checkout dev'
+				// sh 'git reset --hard dev@{1.minutes.ago}'
+				sh 'git reset --hard HEAD~1'
+				sh 'git push -f origin dev'
+				echo 'Test Failed ! Changes Reverted !'
+			}
+		}
 		echo 'Test Completed !'
 	    }
 	}
