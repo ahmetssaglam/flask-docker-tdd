@@ -38,7 +38,7 @@ pipeline {
 				   // credentialsId: 'bdefd814-cf0d-4e6d-8a6a-08b00bd71ab1',
 				  //  branch: 'dev'
 				sh 'git remote remove origin'
-				sh 'git remote add origin https://ahmetssaglam:songlin07.@github.com/ahmetssaglam/flask-docker-tdd.git'
+				sh 'git remote add origin https://ahmetssaglam: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@github.com/ahmetssaglam/flask-docker-tdd.git'
 				
 				
 				sh 'git checkout dev'
