@@ -34,7 +34,7 @@ pipeline {
 			catch (err) {
 				
 				
-				git url: "https://github.com/ahmetssaglam/flask-docker-tdd.git",
+				git url: "git@github.com:ahmetssaglam/flask-docker-tdd.git",
 				    credentialsId: '0b2f7370-cf6e-46e6-91fc-dbb0a688c87e',
 				    branch: 'dev'
 				
