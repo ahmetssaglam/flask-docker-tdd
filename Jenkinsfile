@@ -25,7 +25,7 @@ pipeline {
 	stage('test') {
 	    steps {
 		echo 'Waiting for DB !!'
-		sh 'sleep 30'	
+		// sh 'sleep 30'	
 		script {
 			try {
 				sh 'docker exec tdd-web python3 -m pytest tests'
@@ -34,7 +34,7 @@ pipeline {
 			catch (err) {
 				
 				
-				git url: "ssh://jenkins@https://github.com/ahmetssaglam/flask-docker-tdd.git",
+				git url: "https://github.com/ahmetssaglam/flask-docker-tdd.git",
 				    credentialsId: '0b2f7370-cf6e-46e6-91fc-dbb0a688c87e',
 				    branch: 'dev'
 				
